@@ -1,0 +1,26 @@
+/* Universal styling */ 
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: rgb(140, 190, 163);
+
+    /* Radial gradient background - css3 */
+    background: radial-gradient(rgba(131, 241, 255, 0.644), rgba(255, 255, 255, 0.5), rgba(221, 138, 71, 0.795));
+    text-align: center;
+
+}
+
+#loginHeader {
+    text-align: center;
+}
+
+#loginImage {
+    background-color: transparent;
+}
+
+#loginContainer {
+    text-align: center;
+}
