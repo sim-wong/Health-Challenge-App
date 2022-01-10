@@ -3,19 +3,60 @@
 <header>
     <h1 id="loginHeader">Health Challenge Login</h1><br>
     <img id="loginImage" src="Resources/boxxy-login.png" alt="Health Challange"><br>
-    <link rel="stylesheet" type="text/css" href="login.css"><br>
+    <link rel="stylesheet" type="text/css" href="login.css">
   </header> 
 
-<div class="logincontainer" id="loginContainer"> <!--division class to be able to call up in css-->
-    <label for="loginname"><b>Login name:</b></label>
-    <input type="text" placeholder="Enter your login name." name="loginname" required>
-    &nbsp;&nbsp;&nbsp;
+<div class="loginContainer" id="loginContainer"> <!--division class to be able to call up in css-->
 
-    <label for="pwd"><b>Password:</b></label>
-    <input type="Password" placeholder="Enter a password." name="pwd" required>
+    <form class="registrationForm" id="registrationForm">
+        <label for="userName"><b>User name:</b></label>
+        <input type="text" placeholder="Enter your user name." name="userName" required>
+        <br><br>
+    
+        <label for="loginEmail"><b>Login email:</b></label>
+        <input type="text" placeholder="Enter your login email." name="loginEmail" required>
+        <br><br>
+    
+        <label for="pwd"><b>Password:</b></label>
+        <input type="Password" placeholder="Enter a password." name="pwd" required>
+        <br><br>
+    
+        <label for="create"></label>
+        <button type="createBtn" name="createBtn" id="createBtn">Create</button>
+        <p class="message" type="registrationBtn" id="registrationBtn">Already registered? <a href="#">Login</a></p>
+        <br><br>
 
-    <button type="submit">Login</button>
-    <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    </form>
+
+
+    <form class="loginForm" id="loginForm">
+        <label for="userName"><b>User name:</b></label>
+        <input type="text" placeholder="Enter your user name." name="userName" required>
+        <br><br>
+
+        <label for="loginEmail"><b>Login email:</b></label>
+        <input type="text" placeholder="Enter your login email." name="loginEmail" required>
+        <br><br>
+
+        <label for="pwd"><b>Password:</b></label>
+        <input type="Password" placeholder="Enter a password." name="pwd" required>
+        <br><br>
+
+        <label for="submit"></label>
+        <button type="submitBtn" name="submitBtn" id="submitBtn">Login</button>
+        <br><br>
+
+        <label>
+            <input type="checkbox" unchecked="unchecked" name="remember"> Remember me
+        </label>
+
+        <p class="message" type="signUpBtn" id="signUpBtn">Not registered? <a href="#">Sign up</a></p>
+        <br><br>
+
+    </form>
+    
+    
+    
 </div>
+
+<script src="login.js"></script>
