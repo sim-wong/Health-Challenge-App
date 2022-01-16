@@ -5,11 +5,9 @@
 }
 
 html {
-    background-color: rgb(140, 190, 163);
-
-    /* Radial gradient background - css3 */
-    background: radial-gradient(circle at center, rgba(131, 241, 255, 0.644), rgba(255, 255, 255, 0.5), rgba(221, 138, 71, 0.795));
-    background-size: auto;
+    background-image: url("/images/login-mountain.png");
+    background-size: 100%;
+    min-height: 100%;
     text-align: center;
 
 }
@@ -20,6 +18,8 @@ html {
 
 #loginImage {
     background-color: transparent;
+    width: 180px;
+    height: 190px;
 }
 
 #loginContainer {
