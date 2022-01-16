@@ -35,6 +35,12 @@ h1 {
   font-weight: bold;
 }
 
+.highlight {
+  color: white;
+  background-color: blue;
+  padding: 0 5px;
+}
+
 .button {
   display: block;
   text-align: center;
@@ -92,4 +98,41 @@ h1 {
 .col-one,
 .col-two {
   border-right: 1.5px solid rgb(117 88 8);
+}
+
+/* Forms */
+
+#workout-form {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 200px auto;
+  width: 400px;
+  height: 300px;
+  background-color: var(--primary-color);
+  padding: 30px;
+  border-radius: 25px;
+}
+
+#workout-x {
+  text-decoration: none;
+  position: absolute;
+  left: 360px;
+  top: 15px;
+  color: white;
+  background-color: blue;
+  padding: 4px 10px;
+  border-radius: 50%;
+}
+
+#workout-x:hover {
+  cursor: pointer;
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
 }

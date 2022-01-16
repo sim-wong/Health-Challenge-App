@@ -20,13 +20,38 @@
     <link rel="stylesheet" href="src/game.css" />
   </head>
   <body>
+    <div class="form-popup" id="workout-form">
+      <div class="form-container">
+        <a class="close-x" id="workout-x" onclick="closeForm()">X</a>
+        <label for="workout-name">What workout did you do?</label><br />
+        <input type="text" id="workout-name" name="workout-name" /><br />
+        <label for="workout-duration"
+          >How long did you workout for (in mins)?</label
+        >
+        <br />
+        <input
+          type="number"
+          id="workout-duration"
+          name="workout-duration"
+        /><br />
+        <input
+          class="submit-btn"
+          type="submit"
+          value="Submit"
+          onclick="closeForm()"
+        />
+      </div>
+    </div>
+
     <div class="box">
       <div class="row">
         <div class="col-5">
           <div class="workout-log">
             <h1>Hi Simon! Ready to climb the mountain?</h1>
             <p>
-              You are on step X, and in X place overall. Keep up the good work!
+              You are on <span class="highlight">step X </span>, and in
+              <span class="highlight">X place overall</span>. Keep up the good
+              work!
             </p>
             <div class="row">
               <div class="col-5 rules">
@@ -38,7 +63,9 @@
                 </ul>
               </div>
               <div class="col-7">
-                <a href="#" class="button">Log workout</a>
+                <a href="#" class="button" id="log-workout" onclick="openForm()"
+                  >Log workout</a
+                >
                 <a href="#" class="button">Bonus challenge</a>
                 <a href="#" class="button">View workouts</a>
               </div>
@@ -60,5 +87,6 @@
         </div>
       </div>
     </div>
+    <script src="/src/game.js"></script>
   </body>
 </html>
