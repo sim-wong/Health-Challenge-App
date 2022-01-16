@@ -1,0 +1,37 @@
+/* Universal styling */ 
+* { 
+    margin: 20;
+    padding: 0;
+}
+
+html {
+    background-color: rgb(140, 190, 163);
+
+    /* Radial gradient background - css3 */
+    background: radial-gradient(circle at center, rgba(131, 241, 255, 0.644), rgba(255, 255, 255, 0.5), rgba(221, 138, 71, 0.795));
+    background-size: auto;
+    text-align: center;
+
+}
+
+#loginHeader {
+    text-align: center;
+}
+
+#loginImage {
+    background-color: transparent;
+}
+
+#loginContainer {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+#registrationForm {
+    display: none
+}
+
+/*#loginForm {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}*/
