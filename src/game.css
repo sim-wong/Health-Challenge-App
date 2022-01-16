@@ -24,7 +24,7 @@ body {
   outline: 5px solid rgb(58 118 90);
 
   border-radius: 25px;
-  background-image: url("/resources/mountain.png");
+  background-image: url("/images/mountain.png");
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
