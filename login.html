@@ -2,40 +2,51 @@
 <html lang="en">
 <header>
     <h1 id="loginHeader">Health Challenge Login</h1><br>
-    <img id="loginImage" src="Resources/boxxy-login.png" alt="Health Challange"><br><br>
+    <img id="loginImage" src="images/boxxy-login.png" alt="Health Challange"><br><br>
     <link rel="stylesheet" type="text/css" href="login.css">
   </header> 
 
 <div class="loginContainer" id="loginContainer"> <!--division class to be able to call up in css-->
 
-    <form class="registrationForm" id="registrationForm">
-        <label for="loginEmail"><b>Login email:</b></label>
+    <form action="signup.php" method="post" id="registrationForm">
+        <h2>Sign Up</h2>
+        <label for="loginEmail"><b>Email:</b></label>
         <input type="email" placeholder="Enter your email address." name="loginEmail" required>
+        <br><br>
+
+        <label for="userUid"><b>Username:</b></label>
+        <input type="text" placeholder="Enter your username." name="userUid" required>
         <br><br>
     
         <label for="pwd"><b>Password:</b></label>
         <input type="Password" placeholder="Enter a password." name="pwd" required>
         <br><br>
     
-        <label for="create"></label>
-        <button type="createBtn" name="createBtn" id="createBtn">Create</button>
+        <label for="submit"></label>
+        <button type="submitBtn" name="submitBtn" id="submitBtn">Submit</button>
+        <br><br>
         <p class="message" type="registrationBtn" id="registrationBtn">Already registered? <a href="#">Login</a></p>
         <br><br>
 
     </form>
 
 
-    <form class="loginForm" id="loginForm">
-        <label for="loginEmail"><b>Login email:</b></label>
+    <form action="login.php" method="post" id="loginForm">
+        <h2>Log In</h2>
+        <label for="loginEmail"><b>Email:</b></label>
         <input type="email" placeholder="Enter your email address." name="loginEmail" required>
+        <br><br>
+
+        <label for="userUid"><b>Username:</b></label>
+        <input type="text" placeholder="Enter your username." name="userUid" required>
         <br><br>
 
         <label for="pwd"><b>Password:</b></label>
         <input type="Password" placeholder="Enter a password." name="pwd" required>
         <br><br>
 
-        <label for="submit"></label>
-        <button type="submitBtn" name="submitBtn" id="submitBtn">Login</button>
+        <label for="login"></label>
+        <button type="loginBtn" name="loginBtn" id="loginBtn">Login</button>
         <br><br>
 
         <label>
@@ -46,7 +57,6 @@
         <br><br>
 
     </form>
-    
     
     
 </div>
