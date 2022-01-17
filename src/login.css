@@ -29,10 +29,11 @@ html {
 }
 
 #registrationForm {
+    font-family: "Nunito", sans-serif;
     display: none
 }
 
-/*#loginForm {
-    font-family: "Roboto", sans-serif;
+#loginForm {
+    font-family: "Nunito", sans-serif;
     text-align: center;
-}*/
+}
