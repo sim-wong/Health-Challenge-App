@@ -86,11 +86,24 @@
         </div>
         <div class="col-7">
           <div id="game-container">
-            <img src="" alt="" />
+            <div class="zoom">
+              <a href="#" onclick="zoomOut()"
+                ><i class="fas fa-search-minus"></i
+              ></a>
+              <a href="#" onclick="zoomIn()"
+                ><i class="fas fa-search-plus"></i
+              ></a>
+            </div>
+            <img src="/images/mountain.png" alt="mountain" id="mountain-img" />
           </div>
         </div>
       </div>
     </div>
+
     <script src="/src/game.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6041ac5592.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

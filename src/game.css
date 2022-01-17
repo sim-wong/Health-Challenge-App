@@ -18,16 +18,27 @@ body {
 }
 
 #game-container {
+  position: relative;
   background-color: #caeaff;
-  outline: 5px solid rgb(58 118 90);
-
-  border-radius: 25px;
-  background-image: url("/resources/mountain.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 500%;
+  border-radius: 5px;
+  width: 700px;
   height: 500px;
   padding: 0;
+  overflow: hidden;
+}
+
+#game-container img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.zoom {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  z-index: 1;
 }
 
 h1 {
