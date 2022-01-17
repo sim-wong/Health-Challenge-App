@@ -1,0 +1,37 @@
+/* Universal styling */ 
+* { 
+    margin: 20;
+    padding: 0;
+}
+
+html {
+    background-image: url("/images/login-mountain.png");
+    background-size: 100%;
+    min-height: 100%;
+    text-align: center;
+
+}
+
+#loginHeader {
+    text-align: center;
+}
+
+#loginImage {
+    background-color: transparent;
+    width: 180px;
+    height: 190px;
+}
+
+#loginContainer {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+#registrationForm {
+    display: none
+}
+
+/*#loginForm {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}*/

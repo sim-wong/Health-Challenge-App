@@ -20,9 +20,13 @@ body {
 #game-container {
   background-color: #caeaff;
   outline: 5px solid rgb(58 118 90);
+
   border-radius: 25px;
+  background-image: url("/resources/mountain.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500%;
   height: 500px;
-  width: 600px;
   padding: 0;
 }
 
