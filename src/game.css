@@ -1,5 +1,8 @@
 :root {
-  --primary-color: rgb(88 66 6);
+  --primary-color: rgb(203 219 252);
+  --secondary-color: rgb(69 40 60);
+  --tertiary-color: rgb(40 139 93);
+  --secondary-font-color: #e1e3f1;
 }
 
 * {
@@ -8,23 +11,42 @@
 }
 
 body {
-  background-color: #89c5ee;
+  background-color: var(--primary-color);
   font-family: "Nunito", sans-serif;
 }
 
-.box {
+.menu {
+  width: 100%;
+  text-align: right;
+}
+
+#log-out {
+  display: block;
+  padding: 30px 100px 0 0;
+  color: white;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+#log-out:hover {
+  text-decoration: underline;
+}
+
+.page-container {
   margin: 50px auto;
   width: 1200px;
 }
 
 #game-container {
   position: relative;
-  background-color: #caeaff;
+  border: 2px solid var(--secondary-color);
   border-radius: 5px;
   width: 700px;
   height: 500px;
   padding: 0;
   overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #game-container img {
@@ -34,38 +56,98 @@ body {
   left: 0;
 }
 
+.navigation {
+  position: relative;
+  width: 75px;
+  z-index: 1;
+  top: 60px;
+  left: 10px;
+}
+
+#navigation {
+  position: absolute;
+  width: 60px;
+}
+
 .zoom {
   position: absolute;
-  top: 10px;
-  left: 40px;
+  font-size: 20px;
+  line-height: 25px;
+  top: 15px;
+  left: 80px;
   z-index: 1;
+}
+
+.zoom i {
+  color: #3f3f74;
+}
+
+.navigation a {
+  position: absolute;
+  color: #08085c;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#move-left {
+  top: -33.5px;
+  left: 10px;
+}
+
+#move-right {
+  top: -33.5px;
+  left: 42px;
+}
+
+#move-down {
+  left: 26.5px;
+  top: -17px;
+}
+
+#move-up {
+  left: 26.5px;
+  top: -49px;
 }
 
 h1 {
   color: white;
   font-weight: bold;
+  margin-top: -75px;
+  margin-bottom: 25px;
 }
 
 .highlight {
-  color: white;
-  background-color: blue;
+  color: var(--secondary-font-color);
+  background-color: var(--tertiary-color);
   padding: 0 5px;
 }
 
 .button {
+  position: relative;
   display: block;
   text-align: center;
   text-decoration: none;
   width: 200px;
   padding: 15px 25px;
-  color: white;
-  background-color: var(--primary-color);
+  color: var(--secondary-font-color);
+  background-color: var(--secondary-color);
   border-radius: 10px;
   margin: 10px auto;
+  transition: all 300ms ease-in-out;
+}
+
+.button:hover {
+  text-decoration: none;
+  transform: scale(1.05);
+  color: var(--secondary-font-color);
+}
+
+.workout-log .row {
+  margin-top: 50px;
 }
 
 .rules {
-  background-color: rgba(211, 211, 211, 0.644);
+  background-color: rgba(225 227 241);
   border-radius: 10px;
   font-size: 14px;
   padding: 15px;
@@ -90,7 +172,8 @@ h1 {
 
 .tools .row {
   padding: 15px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-font-color);
   border-radius: 10px;
   width: 400px;
   margin: 0 auto;
@@ -108,7 +191,7 @@ h1 {
 
 .col-one,
 .col-two {
-  border-right: 1.5px solid rgb(117 88 8);
+  border-right: 1.5px solid rgb(36 24 32);
 }
 
 /* Forms */
@@ -120,30 +203,52 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 30px;
   margin: 160px auto;
   width: 400px;
   height: 350px;
-  background-color: var(--primary-color);
-  padding: 30px;
-  border-radius: 25px;
+  color: var(--secondary-font-color);
+  background-color: rgb(94 170 135);
+  border: 2px solid var(--tertiary-color);
+  border-radius: 5px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.submit-btn {
+  color: var(--secondary-font-color);
+  background-color: #335a48;
+  border: 1px solid #335a48;
+  border-radius: 5px;
+  padding: 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
 }
 
 #workout-x {
   text-decoration: none;
   position: absolute;
-  left: 360px;
+  left: 350px;
   top: 15px;
-  color: white;
-  background-color: blue;
-  padding: 4px 10px;
+  color: var(--secondary-font-color);
+  background-color: #335a48;
+  padding: 3px 10px;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 #workout-x:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 input {
   margin: 10px;
   padding: 5px;
+  background-color: var(--secondary-font-color);
+  border-radius: 5px;
+  border: 1px solid var(--secondary-font-color);
 }

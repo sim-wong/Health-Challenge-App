@@ -20,86 +20,114 @@
     <link rel="stylesheet" href="src/game.css" />
   </head>
   <body>
-    <div class="form-popup" id="workout-form">
-      <div class="form-container">
-        <a class="close-x" id="workout-x" onclick="closeForm()">X</a>
-        <label for="workout-date">When did you workout?</label><br />
-        <input type="date" id="workout-date" name="workout-date" /><br />
-        <label for="workout-name">What workout did you do?</label><br />
-        <input type="text" id="workout-name" name="workout-name" /><br />
-        <label for="workout-duration"
-          >How long did you workout for (in mins)?</label
-        >
-        <br />
-        <input
-          type="number"
-          id="workout-duration"
-          name="workout-duration"
-        /><br />
-        <input
-          class="submit-btn"
-          type="submit"
-          value="Submit"
-          onclick="closeForm()"
-        />
-      </div>
+    <div class="menu">
+      <a href="#" id="log-out">Log out</a>
     </div>
 
-    <div class="box">
-      <div class="row">
-        <div class="col-5">
-          <div class="workout-log">
-            <h1>Hi Simon! Ready to climb the mountain?</h1>
-            <p>
-              You are on <span class="highlight">step X </span>, and in
-              <span class="highlight">X place overall</span>. Keep up the good
-              work!
-            </p>
-            <div class="row">
-              <div class="col-5 rules">
-                <p>Rules:</p>
-                <ul>
-                  <li>Log a 20 min workout, move 1 step.</li>
-                  <li>Do a bonus challenge, move 1/4 step.</li>
-                  <li>Get to the top - Win.</li>
-                </ul>
-              </div>
-              <div class="col-7">
-                <a href="#" class="button" id="log-workout" onclick="openForm()"
-                  >Log workout</a
-                >
-                <a href="#" class="button">Bonus challenge</a>
-                <a href="#" class="button">View workouts</a>
-              </div>
-            </div>
+    <div class="page-container">
+      <div class="form-popup" id="workout-form">
+        <div class="form-container">
+          <a class="close-x" id="workout-x" onclick="closeForm()">X</a>
+          <label for="workout-date">When did you workout?</label><br />
+          <input type="date" id="workout-date" name="workout-date" /><br />
+          <label for="workout-name">What workout did you do?</label><br />
+          <input type="text" id="workout-name" name="workout-name" /><br />
+          <label for="workout-duration"
+            >How long did you workout for (in mins)?</label
+          >
+          <br />
+          <input
+            type="number"
+            id="workout-duration"
+            name="workout-duration"
+          /><br />
+          <input
+            class="submit-btn"
+            type="submit"
+            value="Submit"
+            onclick="closeForm()"
+          />
+        </div>
+      </div>
 
-            <div class="tools">
+      <div class="box">
+        <div class="row">
+          <div class="col-5">
+            <div class="workout-log">
+              <h1>Hi Simon! Ready to climb the mountain?</h1>
+              <p>
+                You are on <span class="highlight">step X</span>, and in
+                <span class="highlight">X place overall</span>. Keep up the good
+                work!
+              </p>
               <div class="row">
-                <div class="col col-one"><a href="#">Workout routines</a></div>
-                <div class="col col-two"><a href="#">Timer/Stopwatch</a></div>
-                <div class="col col-three">
-                  <a href="#">Motivational quote</a>
+                <div class="col-5 rules">
+                  <p>Rules:</p>
+                  <ul>
+                    <li>Log a 20 min workout, move 1 step.</li>
+                    <li>Do a bonus challenge, move 1/4 step.</li>
+                    <li>Get to the top - Win.</li>
+                  </ul>
+                </div>
+                <div class="col-7">
+                  <a
+                    href="#"
+                    class="button"
+                    id="log-workout"
+                    onclick="openForm()"
+                    >Log workout</a
+                  >
+                  <a href="#" class="button">Bonus challenge</a>
+                  <a href="#" class="button">View workouts</a>
+                </div>
+              </div>
+
+              <div class="tools">
+                <div class="row">
+                  <div class="col col-one">
+                    <a href="#">Workout routines</a>
+                  </div>
+                  <div class="col col-two"><a href="#">Timer/Stopwatch</a></div>
+                  <div class="col col-three">
+                    <a href="#">Motivational quote</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-7">
-          <div id="game-container">
-            <div class="zoom">
-              <a href="#" onclick="zoomOut()"
-                ><i class="fas fa-search-minus"></i
-              ></a>
-              <a href="#" onclick="zoomIn()"
-                ><i class="fas fa-search-plus"></i
-              ></a>
+          <div class="col-7">
+            <div id="game-container">
+              <div class="navigation">
+                <img
+                  src="images/navigation.png"
+                  alt="navigation"
+                  id="navigation"
+                />
+                <a href="#" onclick="moveLeft()" id="move-left">+</a>
+                <a href="#" onclick="moveUp()" id="move-up">+</a>
+                <a href="#" onclick="moveRight()" id="move-right">+</a>
+                <a href="#" onclick="moveDown()" id="move-down">+</a>
+              </div>
+              <div class="zoom">
+                <a href="#" onclick="zoomIn()"
+                  ><i class="fas fa-search-plus"></i
+                ></a>
+                <br />
+                <a href="#" onclick="zoomOut()"
+                  ><i class="fas fa-search-minus"></i
+                ></a>
+              </div>
+
+              <img
+                src="/images/mountain.png"
+                alt="mountain"
+                id="mountain-img"
+              />
             </div>
-            <img src="/images/mountain.png" alt="mountain" id="mountain-img" />
           </div>
         </div>
       </div>
     </div>
-
     <script src="/src/game.js"></script>
     <script
       src="https://kit.fontawesome.com/6041ac5592.js"
