@@ -5,6 +5,7 @@
 }
 
 html {
+    font-family: "Nunito", sans-serif;
     background-image: url("/images/login-mountain.png");
     background-size: 100%;
     min-height: 100%;
@@ -23,15 +24,16 @@ html {
 }
 
 #loginContainer {
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-align: center;
 }
 
 #registrationForm {
+    font-family: "Nunito", sans-serif;
     display: none
 }
 
-/*#loginForm {
-    font-family: "Roboto", sans-serif;
+#loginForm {
+    font-family: "Nunito", sans-serif;
     text-align: center;
-}*/
+}
