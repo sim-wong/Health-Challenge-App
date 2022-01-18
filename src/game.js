@@ -23,16 +23,16 @@ function moveUp() {
   console.log(currentPosition);
 
   function newPosition() {
-    positionBottom -= 100;
+    positionBottom -= 75;
 
-    if (positionBottom >= -1200) {
+    if (positionBottom >= -750) {
       return positionBottom;
     } else {
-      positionBottom = -1200;
+      positionBottom = -750;
     }
   }
   if (
-    currentPosition >= -1200 &&
+    currentPosition >= -750 &&
     currentPosition <= 0 &&
     currentPosition != undefined
   ) {
@@ -45,7 +45,7 @@ function moveDown() {
   console.log(currentPosition);
 
   function newPosition() {
-    positionBottom += 100;
+    positionBottom += 75;
 
     if (positionBottom <= 0) {
       return positionBottom;
@@ -54,7 +54,7 @@ function moveDown() {
     }
   }
   if (
-    currentPosition >= -1200 &&
+    currentPosition >= -750 &&
     currentPosition <= 0 &&
     currentPosition != undefined
   ) {
@@ -67,7 +67,7 @@ function moveLeft() {
   console.log(currentPosition);
 
   function newPosition() {
-    positionLeft += 100;
+    positionLeft += 75;
 
     if (positionLeft <= 0) {
       return positionLeft;
@@ -76,7 +76,7 @@ function moveLeft() {
     }
   }
   if (
-    currentPosition >= -1200 &&
+    currentPosition >= -750 &&
     currentPosition <= 0 &&
     currentPosition != undefined
   ) {
@@ -89,16 +89,16 @@ function moveRight() {
   console.log(currentPosition);
 
   function newPosition() {
-    positionLeft -= 100;
+    positionLeft -= 75;
 
-    if (positionLeft >= -1200) {
+    if (positionLeft >= -675) {
       return positionLeft;
     } else {
-      positionLeft = -1200;
+      positionLeft = -675;
     }
   }
   if (
-    currentPosition >= -1200 &&
+    currentPosition >= -675 &&
     currentPosition <= 0 &&
     currentPosition != undefined
   ) {
