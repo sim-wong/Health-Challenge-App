@@ -128,7 +128,7 @@ body {
 #sprite-preview {
   height: 384px;
   width: 384px;
-  border: 5px solid rgba(0, 0, 0);
+  border: 5px solid var(--secondary-color);
   background-color: white;
   border-radius: 360px;
 }
