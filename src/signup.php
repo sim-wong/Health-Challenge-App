@@ -1,14 +1,10 @@
-<html>
-<link rel="stylesheet" type="text/css" href="src/login.css">
-</html>
-
 <?php
 
 if (isset($_POST["submit"])) { //check if the user accessed this page in proper method. 
     
-    $loginEmail = $_POST["loginEmail"];
-    $userName = $_POST["userUid"];
-    $pwd = $_POST["pwd"];
+    $loginEmail = $_POST["email-input"];
+    $userName = $_POST["username-input"];
+    $pwd = $_POST["password-input"];
 
     require_once 'dbh.php';
     require_once 'function.php';
@@ -38,10 +34,8 @@ if (isset($_POST["submit"])) { //check if the user accessed this page in proper 
     
 }
 else {
-    header("location:../login.html#register");
+    header("location:../login.html");
     exit();
 }
 
 ?>
-
-<script src="src/login.js"></script>
