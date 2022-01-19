@@ -1,9 +1,9 @@
 <?php
 
-$serverName="localhost:8080";
-$dbUsername="root";
-$dBPassword="";
-$dBName="healthchallenge01";
+$serverName='sql200.epizy.com';
+$dbUsername='epiz_30850591';
+$dBPassword='bH9tghSnrCuORlP';
+$dBName='epiz_30850591_healthchallenge01';
 
 $conn = mysqli_connect($serverName, $dbUsername, $dBPassword, $dBName);
 

@@ -389,6 +389,16 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+#login-form {
+  background-color: var(--secondary-color);
+  width: 378px;
+  padding: 30px;
+  margin: 0 auto;
+  color: var(--secondary-font-color);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
 #workout-form {
   display: none;
   position: absolute;
