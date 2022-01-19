@@ -10,6 +10,11 @@
   padding: 0;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 body {
   background-color: var(--primary-color);
   font-family: "Nunito", sans-serif;
@@ -68,9 +73,47 @@ body {
 }
 
 .page-container {
-  margin: 50px auto;
+  margin: 0 auto;
+  padding-top: 30px;
   width: 1200px;
+  min-height: 100%;
 }
+
+/* SIGN UP PAGE */
+
+#signup-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.signup-intro {
+  text-align: center;
+  width: 600px;
+  margin: 0px auto;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.signup-intro h1 {
+  font-size: 48px;
+}
+
+.signup-intro p {
+  color: black;
+}
+
+.signup-outro {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 400px;
+}
+
+/* GAME PAGE */
 
 .box {
   margin-top: 110px;
@@ -169,6 +212,8 @@ h1 {
   color: var(--secondary-font-color);
   background-color: var(--tertiary-color);
   padding: 0 5px;
+  box-shadow: rgb(50 50 93 / 10%) 0px 6px 12px -2px,
+    rgb(0 0 0 / 10%) 0px 3px 7px -3px;
 }
 
 .button {
@@ -245,6 +290,16 @@ h1 {
 
 /* Forms */
 
+#signup-form {
+  background-color: var(--secondary-color);
+  width: 378px;
+  padding: 30px;
+  margin: 0 auto;
+  color: var(--secondary-font-color);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
 #workout-form {
   display: none;
   position: absolute;
@@ -300,4 +355,10 @@ input {
   background-color: var(--secondary-font-color);
   border-radius: 5px;
   border: 1px solid var(--secondary-font-color);
+}
+
+#email-input,
+#username-input,
+#password-input {
+  width: 300px;
 }
