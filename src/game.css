@@ -3,6 +3,7 @@
   --secondary-color: rgb(69 40 60);
   --tertiary-color: rgb(40 139 93);
   --secondary-font-color: #e1e3f1;
+  --primary-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 * {
@@ -111,6 +112,66 @@ body {
   margin: 0 auto;
   padding-top: 50px;
   width: 400px;
+}
+
+/* SPRITE PAGE */
+
+.sprite-intro {
+  padding-top: 100px;
+}
+
+.row {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#sprite-preview {
+  height: 384px;
+  width: 384px;
+  border: 5px solid var(--secondary-color);
+  background-color: white;
+  border-radius: 360px;
+}
+
+.sprite-tabs ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.sprite-tabs ul li {
+  display: inline;
+  padding: 5px 30px 5px 5px;
+  background-color: var(--secondary-font-color);
+}
+
+.tab {
+  width: 415px;
+  height: 400px;
+  background-color: var(--secondary-font-color);
+  padding: 20px;
+  box-shadow: var(--primary-box-shadow);
+}
+
+.sprite-option-img {
+  width: 100px;
+  background-color: white;
+  border-radius: 25px;
+  margin: 10px;
+  box-shadow: var(--primary-box-shadow);
+}
+#hair {
+  display: none;
+}
+#shirt {
+  display: none;
+}
+#pants {
+  display: none;
+}
+
+#accessory {
+  display: none;
 }
 
 /* GAME PAGE */
