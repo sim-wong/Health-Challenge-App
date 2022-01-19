@@ -1,20 +1,33 @@
-// Sprite Tab
+// Sprite Tabs
+
+// adding an event listner to tabs
+// tab id in HTML should be set to "tab-x" where x is
+// the number of the tab
+
+let numberOfTabs = document
+  .getElementById("tab-ul")
+  .getElementsByTagName("li").length;
 
 function openTab(event) {
-  console.log(event);
+  let targetId = event.target.id;
+
+  for (i = 1; i <= numberOfTabs; i++) {
+    let tabId = `tab-${i}`;
+    let tabDiv = `tab-div-${i}`;
+    tabDiv = document.getElementById(`${tabDiv}`);
+
+    if (tabId === targetId) {
+      tabDiv.style.display = "block";
+    } else {
+      tabDiv.style.display = "none";
+    }
+  }
 }
 
-let skinTab = document.getElementById("skin-tab");
-let hairTab = document.getElementById("hair-tab");
-let shirtTab = document.getElementById("shirt-tab");
-let pantsTab = document.getElementById("pants-tab");
-let extraTab = document.getElementById("extra-tab");
-
-skinTab.addEventListener("click", openTab);
-hairTab.addEventListener("click", openTab);
-shirtTab.addEventListener("click", openTab);
-pantsTab.addEventListener("click", openTab);
-extraTab.addEventListener("click", openTab);
+for (i = 1; i <= numberOfTabs; i++) {
+  let tabId = `tab-${i}`;
+  document.getElementById(`${tabId}`).addEventListener("click", openTab);
+}
 
 // Game page
 

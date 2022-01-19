@@ -120,7 +120,7 @@ body {
   padding-top: 100px;
 }
 
-.row {
+.sprite-container .row {
   width: 1000px;
   margin: 0 auto;
 }
@@ -133,24 +133,52 @@ body {
   border-radius: 360px;
 }
 
-.sprite-tabs ul {
+#sprite-tabs ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  width: 363px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 }
 
-.sprite-tabs ul li {
+#sprite-tabs ul li {
   display: inline;
-  padding: 5px 30px 5px 5px;
+  padding: 5px 30px 1px 5px;
+  margin-right: -3px;
+  border-right: 2px solid #99999f;
   background-color: var(--secondary-font-color);
 }
 
 .tab {
-  width: 415px;
+  width: 420px;
   height: 400px;
   background-color: var(--secondary-font-color);
   padding: 20px;
   box-shadow: var(--primary-box-shadow);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 0 45px 45px 45px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-font-color);
+}
+
+::-webkit-scrollbar-button {
+  height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .sprite-option-img {
@@ -160,17 +188,17 @@ body {
   margin: 10px;
   box-shadow: var(--primary-box-shadow);
 }
-#hair {
+#tab-div-2 {
   display: none;
 }
-#shirt {
+#tab-div-3 {
   display: none;
 }
-#pants {
+#tab-div-4 {
   display: none;
 }
 
-#accessory {
+#tab-div-5 {
   display: none;
 }
 
