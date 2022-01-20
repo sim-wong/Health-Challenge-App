@@ -1,7 +1,7 @@
 :root {
   --primary-color: rgb(203 219 252);
   --secondary-color: rgb(69 40 60);
-  --tertiary-color: rgb(40 139 93);
+  --tertiary-color: #335a48;
   --secondary-font-color: #e1e3f1;
   --primary-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -120,33 +120,67 @@ body {
   padding-top: 100px;
 }
 
-.sprite-container .row {
-  width: 1000px;
+.sprite-intro h1 {
+  text-align: center;
+}
+
+.sprite-instructions {
+  margin: 50px auto 30px 150px;
+  font-size: 24px;
+  width: 800px;
+}
+
+.sprite-container {
+  background-color: rgb(184 198 227);
+  padding: 15px;
+  width: 950px;
+  border-radius: 45px;
   margin: 0 auto;
+  box-shadow: var(--primary-box-shadow);
+}
+
+.sprite-container .row {
+  width: 900px;
+  margin: 25px 0 25px 0;
 }
 
 #sprite-preview {
   height: 384px;
   width: 384px;
+  margin-top: 20px;
+  margin-left: 20px;
   border: 5px solid var(--secondary-color);
   background-color: white;
   border-radius: 360px;
 }
 
+#sprite-preview img {
+  margin-top: 17px;
+}
+
+#sprite-selection {
+  margin-left: 30px;
+}
+
 #sprite-tabs ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 1px 0;
   padding-left: 0;
   width: 363px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 }
 
 #sprite-tabs ul li {
   display: inline;
-  padding: 5px 30px 1px 5px;
-  margin-right: -3px;
-  border-right: 2px solid #99999f;
-  background-color: var(--secondary-font-color);
+  padding: 12px 21px 2px 15px;
+  margin-right: -4px;
+  border-radius: 10px 10px 0 0;
+  font-weight: 600;
+}
+
+#sprite-tabs ul li:hover {
+  cursor: pointer;
+  color: var(--secondary-font-color);
+  background-color: #a8b3c9;
 }
 
 .tab {
@@ -158,6 +192,43 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   border-radius: 0 45px 45px 45px;
+}
+
+.active-tab {
+  background-color: var(--secondary-font-color);
+  border-bottom: 2px solid var(--secondary-font-color);
+}
+
+.inactive-tab {
+  background-color: rgb(206 211 223);
+  color: black;
+  box-shadow: rgb(0 0 0 / 1%) 0px 4px 12px;
+}
+
+.sprite-submit {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 10px;
+}
+
+#sprite-submit-button {
+  display: block;
+  text-align: left;
+  width: 200px;
+  text-decoration: none;
+  padding: 15px 25px;
+  margin-right: 20px;
+  color: var(--secondary-font-color);
+  background-color: var(--tertiary-color);
+  border-radius: 10px;
+  box-shadow: var(--primary-box-shadow);
+  transition: all 300ms ease-in-out;
+}
+
+#sprite-submit-button:hover {
+  text-decoration: none;
+  transform: scale(1.05);
+  color: var(--secondary-font-color);
 }
 
 /* Scrollbar */
@@ -186,8 +257,15 @@ body {
   background-color: white;
   border-radius: 25px;
   margin: 10px;
-  box-shadow: var(--primary-box-shadow);
+  transition: all 300ms ease-in-out;
 }
+
+.sprite-option-img:hover {
+  cursor: pointer;
+  box-shadow: var(--primary-box-shadow);
+  transform: scale(1.1);
+}
+
 #tab-div-2 {
   display: none;
 }
@@ -215,8 +293,7 @@ body {
 
 #game-container {
   position: relative;
-  border: 2px solid var(--secondary-color);
-  border-radius: 5px;
+  border-radius: 45px;
   width: 700px;
   height: 500px;
   padding: 0;
@@ -295,6 +372,10 @@ h1 {
   font-weight: bold;
 
   margin-bottom: 25px;
+}
+
+.workout-log p {
+  font-size: 24px;
 }
 
 .highlight {

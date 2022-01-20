@@ -36,14 +36,17 @@
     <div class="page-container">
       <div class="sprite-intro">
         <h1>Congrats on starting your new journey!</h1>
-        <h2>Before setting off...</h2>
+      </div>
+
+      <div class="sprite-instructions">
         <p>
           This is your chance to create or recreate yourself. With limitations.
-          But imagination is infinite! And that's what really counts.
+          But <span class="highlight">imagination is infinite!</span> And that's
+          what really counts.
         </p>
       </div>
 
-      <div class="sprint-container">
+      <div class="sprite-container">
         <div class="row">
           <div class="col-4" id="sprite-preview">
             <img src="/images/sprite/sprite-basic.png" alt="sprite-preview" />
@@ -51,11 +54,11 @@
           <div class="col" id="sprite-selection">
             <div id="sprite-tabs">
               <ul id="tab-ul">
-                <li id="tab-1">Skin</li>
-                <li id="tab-2">Hair</li>
-                <li id="tab-3">Shirt</li>
-                <li id="tab-4">Pants</li>
-                <li id="tab-5">Extra</li>
+                <li class="active-tab" id="tab-1">Skin</li>
+                <li class="inactive-tab" id="tab-2">Hair</li>
+                <li class="inactive-tab" id="tab-3">Shirt</li>
+                <li class="inactive-tab" id="tab-4">Pants</li>
+                <li class="inactive-tab" id="tab-5">Extra</li>
               </ul>
             </div>
             <div class="tab" id="tab-div-1">
@@ -312,8 +315,13 @@
             </div>
           </div>
         </div>
+        <div class="sprite-submit">
+          <a href="#" id="sprite-submit-button">Ready? Let's go! → </a>
+        </div>
       </div>
+
+      <div class="future"></div>
     </div>
-    <script src="/src/game.js"></script>
+    <script src="/src/sprite.js"></script>
   </body>
 </html>

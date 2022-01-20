@@ -1,34 +1,3 @@
-// Sprite Tabs
-
-// adding an event listner to tabs
-// tab id in HTML should be set to "tab-x" where x is
-// the number of the tab
-
-let numberOfTabs = document
-  .getElementById("tab-ul")
-  .getElementsByTagName("li").length;
-
-function openTab(event) {
-  let targetId = event.target.id;
-
-  for (i = 1; i <= numberOfTabs; i++) {
-    let tabId = `tab-${i}`;
-    let tabDiv = `tab-div-${i}`;
-    tabDiv = document.getElementById(`${tabDiv}`);
-
-    if (tabId === targetId) {
-      tabDiv.style.display = "block";
-    } else {
-      tabDiv.style.display = "none";
-    }
-  }
-}
-
-for (i = 1; i <= numberOfTabs; i++) {
-  let tabId = `tab-${i}`;
-  document.getElementById(`${tabId}`).addEventListener("click", openTab);
-}
-
 // Game page
 
 let mountain = document.getElementById("mountain-img");
