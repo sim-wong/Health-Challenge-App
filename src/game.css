@@ -136,7 +136,10 @@ body {
   width: 950px;
   border-radius: 45px;
   margin: 0 auto;
-  box-shadow: var(--primary-box-shadow);
+  box-shadow: var(--primary-box-shadow), 0px -3px 2px 0px #dbe2ec,
+    -7px -7px 2px 0px #b9c5dd, 8px -7px 0px 0px #b9c5dd,
+    -7px 7px 0px 0px #ffffff6b, 8px 7px 0px 0px #b9c5dd,
+    2px 12px 2px 0px #dbe2ef;
 }
 
 .sprite-container .row {
@@ -156,6 +159,20 @@ body {
 
 #sprite-preview img {
   margin-top: 17px;
+}
+
+.sprite-option-apply {
+  position: absolute;
+  top: 395px;
+  display: none;
+}
+
+.active-option {
+  display: block;
+}
+
+.inactive-option {
+  display: none;
 }
 
 #sprite-selection {
