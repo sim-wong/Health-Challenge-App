@@ -73,4 +73,39 @@ function uidExists($conn, $loginEmail, $userName, $pwd) {
     header("location:../login.html#login?error=none");
     exit();
 }
+
+function emptyInputLogin($loginEmail, $pwd) {
+    $result; 
+    if(empty($loginEmail || $pwd)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result; 
+}
+
+function loginUser($conn, $loginEmail, $pwd) {
+    $uidExists = uidExists($conn, $loginEmail, $loginEmail)
+
+    if ($uidExists === false) {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+}
+
+$pwdHashed = $uidExists["usersPwd"];
+$checkPwd = password_verify($pwd);
+
+if($checkPwd === false) {
+    header("location: ../login.php?error=wrongpassword");
+        exit();
+}
+else if ($checkPwd === true) {
+    session_start();
+    $_SESSION["userid"] = $uidExists["usersId"];
+    $_SESSION["useruid"] = $uidExists["usersUId"];
+    header("location:../sprite.html");
+    exit();
+}
 ?>
