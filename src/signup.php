@@ -1,13 +1,13 @@
 <?php
 
-if (isset($_POST["submit"])) { //check if the user accessed this page in proper method. 
+if (isset($_POST["submit"])) {
     
     $loginEmail = $_POST["email-input"];
     $userName = $_POST["username-input"];
     $pwd = $_POST["password-input"];
 
-    require_once 'dbh.php';
-    require_once 'function.php';
+    require_once "dbh.php";
+    require_once "function.php";
 
     if(emptyInputSignup($loginEmail, $userName, $pwd) !== false){
         header("location:../login.html#register?error=emptyinput");
