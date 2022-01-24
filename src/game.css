@@ -131,15 +131,16 @@ body {
 }
 
 .sprite-container {
-  background-color: rgb(184 198 227);
+  background-color: transparent;
   padding: 15px;
   width: 950px;
   border-radius: 45px;
   margin: 0 auto;
-  box-shadow: var(--primary-box-shadow), 0px -3px 2px 0px #dbe2ec,
-    -7px -7px 2px 0px #b9c5dd, 8px -7px 0px 0px #b9c5dd,
-    -7px 7px 0px 0px #ffffff6b, 8px 7px 0px 0px #b9c5dd,
-    2px 12px 2px 0px #dbe2ef;
+  box-shadow: 2px 2px #e7e7e7, -2px 2px #e7e7e7, -2px -2px #e7e7e7,
+    2px -2px #e7e7e7, -3px -2px #96a3bd, -2px 3px #96a3bd, 3px -2px #96a3bd,
+    3px 2px #96a3be, rgb(50 50 93 / 25%) 0px 50px 100px -20px,
+    rgb(0 0 0 / 30%) 0px 30px 60px -30px,
+    rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
 }
 
 .sprite-container .row {
@@ -152,7 +153,8 @@ body {
   width: 384px;
   margin-top: 20px;
   margin-left: 20px;
-  border: 5px solid var(--secondary-color);
+  border: 5px solid rgb(179 190 215);
+  box-shadow: var(--primary-box-shadow);
   background-color: white;
   border-radius: 360px;
 }
@@ -182,16 +184,19 @@ body {
 #sprite-tabs ul {
   list-style: none;
   margin: 0 0 1px 0;
-  padding-left: 0;
-  width: 363px;
+  padding-left: 0px;
+  padding-top: 28px;
+  width: 400px;
 }
 
 #sprite-tabs ul li {
   display: inline;
-  padding: 12px 21px 2px 15px;
-  margin-right: -4px;
+  padding: 13px 26px 3px 10px;
+  margin-right: 0px;
   border-radius: 10px 10px 0 0;
   font-weight: 600;
+  box-shadow: 3px 0px #a1adc5;
+  border-bottom: 0px solid rgb(225 227 241);
 }
 
 #sprite-tabs ul li:hover {
@@ -208,7 +213,7 @@ body {
   box-shadow: var(--primary-box-shadow);
   overflow-x: hidden;
   overflow-y: scroll;
-  border-radius: 0 45px 45px 45px;
+  border-radius: 0px 45px 45px 45px;
 }
 
 .active-tab {
