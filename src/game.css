@@ -324,18 +324,26 @@ body {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-#game-container img {
+#mountain-img {
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 0;
+}
+
+#sprite-mountain {
+  position: absolute;
+  width: 50px;
+  top: 450px;
+  right: 615px;
 }
 
 .navigation {
   position: relative;
   width: 75px;
   z-index: 1;
-  top: 104px;
+  top: 17px;
   left: 20px;
 }
 
@@ -357,23 +365,23 @@ body {
 }
 
 #move-left {
-  top: -63px;
+  top: 24px;
   left: 15px;
 }
 
 #move-right {
-  top: -63px;
+  top: 24px;
   left: 61px;
 }
 
 #move-down {
   left: 38.5px;
-  top: -39px;
+  top: 46px;
 }
 
 #move-up {
   left: 38.5px;
-  top: -85px;
+  top: 3px;
 }
 
 .zoom {
