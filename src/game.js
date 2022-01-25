@@ -16,9 +16,12 @@ function closeForm() {
 
 // Sprite movement
 let sprite = document.getElementById("sprite-mountain");
-let x = 18;
+let x = 0;
 
-if (x === 1) {
+if (x === 0) {
+  sprite.style.right = 615 + "px";
+  sprite.style.top = 450 + "px";
+} else if (x === 1) {
   sprite.style.right = 515 + "px";
   sprite.style.top = 450 + "px";
 } else if (x === 2) {
