@@ -411,7 +411,7 @@ h1 {
 .highlight {
   color: var(--secondary-font-color);
   background-color: var(--tertiary-color);
-  padding: 0 5px;
+  padding: 2px 10px;
   box-shadow: rgb(50 50 93 / 10%) 0px 6px 12px -2px,
     rgb(0 0 0 / 10%) 0px 3px 7px -3px;
 }
@@ -510,7 +510,7 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-#workout-form {
+.form-popup {
   display: none;
   position: absolute;
   top: 0;
@@ -518,15 +518,18 @@ h1 {
   left: 0;
   right: 0;
   padding: 30px;
-  margin: 160px auto;
-  width: 400px;
-  height: 350px;
   color: var(--secondary-font-color);
   background-color: rgb(94 170 135);
   border: 2px solid var(--tertiary-color);
   border-radius: 5px;
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+}
+
+#workout-form {
+  width: 400px;
+  height: 350px;
+  margin: 160px auto;
 }
 
 .submit-btn {

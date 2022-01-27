@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archon Health Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="/src/stopwatch.css" />
+    <link rel="stylesheet" href="src/game.css" />
+  </head>
+  <body>
+    <div class="menu">
+      <p id="menu-brand">Archon Health</p>
+      <ul>
+        <li>
+          <a href="/game.html" id="game">Challenge</a>
+        </li>
+        <li>
+          <a
+            href="https://www.fitnessblender.com/"
+            id="workout-routines"
+            target="_blank"
+            >Workout routines</a
+          >
+        </li>
+        <li>
+          <a href="/stopwatch.html" id="stopwatch">Stopwatch</a>
+        </li>
+      </ul>
+      <a href="#" id="log-out">Log out</a>
+    </div>
+
+    <div class="page-container">
+      <div class="tool-selector">
+        <ul>
+          <li class="button-tool" id="stopwatch-tool">Stopwatch</li>
+
+          <li class="highlight button-tool" id="timer-tool">Timer</li>
+        </ul>
+      </div>
+
+      <div class="time-container">
+        <p>24:30:00</p>
+      </div>
+      <div class="time-controls">
+        <ul>
+          <li class="button-stopwatch" id="start">
+            <i class="fas fa-play"></i> Start
+          </li>
+          <li class="button-stopwatch" id="pause">
+            <i class="fas fa-pause"></i> Pause
+          </li>
+          <li class="button-stopwatch" id="reset">
+            <i class="fas fa-undo-alt"></i> Reset
+          </li>
+          <li class="button-stopwatch" id="set-timer">
+            <i class="fas fa-hourglass-start"></i> Set timer
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-popup" id="timer-set">
+        <label for="time">Enter time</label>
+        <input type="time" id="time" name="time" />
+        <input
+          class="submit-btn"
+          type="submit"
+          value="Submit"
+          onclick="closeForm()"
+        />
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/6041ac5592.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/src/stopwatch.js"></script>
+</html>
