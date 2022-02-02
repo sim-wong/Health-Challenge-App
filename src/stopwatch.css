@@ -65,6 +65,10 @@ li:hover {
   background-color: rgb(197 73 76);
 }
 
+#set-timer {
+  display: none;
+}
+
 #timer-set {
   display: none;
   width: 400px;

@@ -8,12 +8,14 @@ function stopwatchSelect() {
   timer.classList.remove("highlight");
   stopwatch.classList.add("highlight");
   counter.innerHTML = "00:00:00";
+  setTime.style.display = "none";
 }
 
 function timerSelect() {
   timer.classList.add("highlight");
   stopwatch.classList.remove("highlight");
-  counter.innerHTML = "00:05:00";
+  counter.innerHTML = "00:20:00";
+  setTime.style.display = "inline";
 }
 
 stopwatch.addEventListener("click", stopwatchSelect);
@@ -27,16 +29,69 @@ let start = document.getElementById("start");
 let pause = document.getElementById("pause");
 let reset = document.getElementById("reset");
 let setTime = document.getElementById("set-timer");
+let seconds = document.getElementById("seconds");
+let minutes = document.getElementById("minutes");
+// time innerHTML
+
+let secondBase = 0;
+let minuteBase = 0;
+let hourBase = 0;
 
 function startTimer() {
-  console.log("hi");
+  if (stopwatch.classList.contains("highlight")) {
+    setInterval(function addSecond() {
+      secondBase = secondBase + 1;
+      let updatedSecond = secondBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+      seconds.innerHTML = updatedSecond;
+      if (secondBase > 59) {
+        secondBase = 0;
+        resetSecond = secondBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+        seconds.innerHTML = resetSecond;
+        minuteBase = minuteBase + 1;
+        let updatedMinute = minuteBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+        minutes.innerHTML = updatedMinute;
+      }
+      if (minuteBase > 59) {
+        minuteBase = 0;
+        resetMinute = minuteBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+        minutes.innerHTML = resetMinute;
+        hourBase = hourBase + 1;
+        resetHour = hourBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+        hours.innerHTML = resetHour;
+      }
+    }, 1000);
+  } else {
+    console.log("bye");
+  }
 }
 function pauseTimer() {
-  console.log("hi");
+  if (stopwatch.classList.contains("highlight")) {
+    console.log("hi");
+  } else {
+    console.log("bye");
+  }
 }
 
 function resetTimer() {
-  console.log("hi");
+  if (stopwatch.classList.contains("highlight")) {
+  } else {
+    console.log("bye");
+  }
 }
 function setTimer() {
   document.getElementById("timer-set").style.display = "block";
