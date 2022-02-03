@@ -37,9 +37,11 @@ let secondBase = 0;
 let minuteBase = 0;
 let hourBase = 0;
 
-function startTimer() {
-  if (stopwatch.classList.contains("highlight")) {
-    setInterval(function addSecond() {
+let startT;
+
+function startTime() {
+  if (!startT) {
+    startT = setInterval(function addSecond() {
       secondBase = secondBase + 1;
       let updatedSecond = secondBase.toLocaleString("en-US", {
         minimumIntegerDigits: 2,
@@ -75,13 +77,20 @@ function startTimer() {
         hours.innerHTML = resetHour;
       }
     }, 1000);
+  }
+}
+
+function startTimer() {
+  if (stopwatch.classList.contains("highlight")) {
+    startTime();
   } else {
     console.log("bye");
   }
 }
 function pauseTimer() {
   if (stopwatch.classList.contains("highlight")) {
-    console.log("hi");
+    clearInterval(startT);
+    startT = null;
   } else {
     console.log("bye");
   }
@@ -89,6 +98,23 @@ function pauseTimer() {
 
 function resetTimer() {
   if (stopwatch.classList.contains("highlight")) {
+    clearInterval(startT);
+    startT = null;
+    secondBase = 0;
+    minuteBase = 0;
+    hourBase = 0;
+    seconds.innerHTML = secondBase.toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
+    minutes.innerHTML = minuteBase.toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
+    hours.innerHTML = hourBase.toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
   } else {
     console.log("bye");
   }
