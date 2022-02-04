@@ -78,13 +78,37 @@
       </div>
 
       <div class="form-popup" id="timer-set">
-        <label for="time">Enter time</label>
-        <input type="time" id="time" name="time" />
+        <p class="form-title">Set timer</p>
+        <label for="hoursTimer" class="time-btn-label">Hr:</label>
+        <input
+          class="time-input"
+          type="number"
+          id="hoursTimer"
+          name="time"
+          min="0"
+        />
+        <label for="minutesTimer" class="time-btn-label">Min:</label>
+        <input
+          class="time-input"
+          type="number"
+          id="minutesTimer"
+          name="time"
+          min="0"
+        />
+        <label for="secondsTimer" class="time-btn-label">Sec:</label>
+        <input
+          class="time-input"
+          type="number"
+          id="secondsTimer"
+          name="time"
+          min="0"
+        />
         <input
           class="submit-btn"
           type="submit"
           value="Submit"
           onclick="closeForm()"
+          id="timer-submit"
         />
       </div>
     </div>

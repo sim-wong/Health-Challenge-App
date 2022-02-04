@@ -71,7 +71,38 @@ li:hover {
 
 #timer-set {
   display: none;
-  width: 400px;
-  height: 150px;
+  width: 600px;
+  height: 220px;
   margin: 300px auto;
+}
+
+.form-title {
+  font-size: 28px;
+}
+
+.time-btn-label {
+  font-size: 26px;
+}
+
+.time-input {
+  font-size: 24px;
+  width: 90px;
+  text-align: center;
+}
+
+/* remove arrows in number inputes */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#timer-submit {
+  float: right;
 }

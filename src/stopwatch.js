@@ -14,7 +14,6 @@ function stopwatchSelect() {
 function timerSelect() {
   timer.classList.add("highlight");
   stopwatch.classList.remove("highlight");
-  counter.innerHTML = "00:20:00";
   setTime.style.display = "inline";
 }
 
@@ -31,6 +30,7 @@ let reset = document.getElementById("reset");
 let setTime = document.getElementById("set-timer");
 let seconds = document.getElementById("seconds");
 let minutes = document.getElementById("minutes");
+let hours = document.getElementById("hours");
 // time innerHTML
 
 let secondBase = 0;
@@ -39,7 +39,7 @@ let hourBase = 0;
 
 let startT;
 
-function startTime() {
+function startStopwatch() {
   if (!startT) {
     startT = setInterval(function addSecond() {
       secondBase = secondBase + 1;
@@ -80,11 +80,13 @@ function startTime() {
   }
 }
 
-function startTimer() {
+function startTimer() {}
+
+function startTime() {
   if (stopwatch.classList.contains("highlight")) {
-    startTime();
+    startStopwatch();
   } else {
-    console.log("bye");
+    startTimer();
   }
 }
 function pauseTimer() {
@@ -125,9 +127,39 @@ function setTimer() {
 
 function closeForm() {
   document.getElementById("timer-set").style.display = "none";
+  let timerInputs = document.querySelectorAll('input[type="number"]');
+  console.log(timerInputs[2].value);
+  for (i = 0; i < timerInputs.length; i++) {
+    console.log(timerInputs[i].value);
+    if (timerInputs[i].value === null) {
+      timerInputs[i].value = 0;
+    }
+  }
+  let hourInput = document.getElementById("hoursTimer").value;
+  let minuteInput = document.getElementById("minutesTimer").value;
+  let secondInput = document.getElementById("secondsTimer").value;
+
+  hourBase = hourInput;
+  minuteBase = minuteInput;
+  secondBase = secondInput;
+
+  hours.innerHTML = hourInput.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+
+  minutes.innerHTML = hourInput.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+
+  seconds.innerHTML = hourInput.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
 }
 
-start.addEventListener("click", startTimer);
+start.addEventListener("click", startTime);
 pause.addEventListener("click", pauseTimer);
 reset.addEventListener("click", resetTimer);
 setTime.addEventListener("click", setTimer);
