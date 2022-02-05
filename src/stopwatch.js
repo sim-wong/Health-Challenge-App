@@ -7,101 +7,192 @@ let counter = document.getElementById("counter");
 function stopwatchSelect() {
   timer.classList.remove("highlight");
   stopwatch.classList.add("highlight");
-  counter.innerHTML = "00:00:00";
+  setStart();
   setTime.style.display = "none";
+  resetTimer();
+  if (start.classList.contains("start")) {
+    console.log("has class");
+  } else {
+    setStart();
+  }
 }
-
 function timerSelect() {
   timer.classList.add("highlight");
   stopwatch.classList.remove("highlight");
   setTime.style.display = "inline";
+  setStart();
+  clearInterval(stopwatchCounter);
+  timerSecondBase = 0;
+  timerMinuteBase = 20;
+  timerHourBase = 0;
+
+  seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
 }
 
 stopwatch.addEventListener("click", stopwatchSelect);
 timer.addEventListener("click", timerSelect);
 
-//Stopwatch
+// Start to Pause CSS
 
-// time controls
+function setStart() {
+  start.classList.remove("pause");
+  start.classList.add("start");
+  start.innerHTML = "Start";
+}
 
-let start = document.getElementById("start");
-let pause = document.getElementById("pause");
-let reset = document.getElementById("reset");
-let setTime = document.getElementById("set-timer");
-let seconds = document.getElementById("seconds");
-let minutes = document.getElementById("minutes");
-let hours = document.getElementById("hours");
-// time innerHTML
+function setPause() {
+  start.classList.remove("start");
+  start.classList.add("pause");
+  start.innerHTML = "Pause";
+}
+
+// Button functions
 
 let secondBase = 0;
 let minuteBase = 0;
 let hourBase = 0;
 
-let startT;
+let timerSecondBase = 3;
+let timerMinuteBase = 3;
+let timerHourBase = 3;
+
+let stopwatchCounter;
 
 function startStopwatch() {
-  if (!startT) {
-    startT = setInterval(function addSecond() {
-      secondBase = secondBase + 1;
-      let updatedSecond = secondBase.toLocaleString("en-US", {
+  stopwatchCounter = setInterval(function addSecond() {
+    console.log(stopwatchCounter);
+    secondBase = secondBase + 1;
+    let updatedSecond = secondBase.toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
+    seconds.innerHTML = updatedSecond;
+    if (secondBase > 9) {
+      secondBase = 0;
+      resetSecond = secondBase.toLocaleString("en-US", {
         minimumIntegerDigits: 2,
         useGrouping: false,
       });
-      seconds.innerHTML = updatedSecond;
-      if (secondBase > 59) {
-        secondBase = 0;
-        resetSecond = secondBase.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        });
-        seconds.innerHTML = resetSecond;
-        minuteBase = minuteBase + 1;
-        let updatedMinute = minuteBase.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        });
-        minutes.innerHTML = updatedMinute;
-      }
-      if (minuteBase > 59) {
-        minuteBase = 0;
-        resetMinute = minuteBase.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        });
-        minutes.innerHTML = resetMinute;
-        hourBase = hourBase + 1;
-        resetHour = hourBase.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        });
-        hours.innerHTML = resetHour;
-      }
-    }, 1000);
-  }
+      seconds.innerHTML = resetSecond;
+      minuteBase = minuteBase + 1;
+      let updatedMinute = minuteBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+      minutes.innerHTML = updatedMinute;
+    }
+    if (minuteBase > 9) {
+      minuteBase = 0;
+      resetMinute = minuteBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+      minutes.innerHTML = resetMinute;
+      hourBase = hourBase + 1;
+      resetHour = hourBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+      hours.innerHTML = resetHour;
+    }
+  }, 1000);
 }
 
-function startTimer() {}
+function startTimer() {
+  seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+
+  stopwatchCounter = setInterval(function minusSecond() {
+    if (timerSecondBase > 0) {
+      timerSecondBase = timerSecondBase - 1;
+      seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+    } else {
+      if (timerMinuteBase > 0) {
+        timerMinuteBase = timerMinuteBase - 1;
+        minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+        timerSecondBase = 59;
+        seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
+      } else {
+        if (timerHourBase > 0) {
+          timerHourBase = timerHourBase - 1;
+          hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+            minimumIntegerDigits: 2,
+            useGrouping: false,
+          });
+          timerMinuteBase = 59;
+          minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
+            minimumIntegerDigits: 2,
+            useGrouping: false,
+          });
+        } else {
+          timerHourBase = 0;
+          hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+            minimumIntegerDigits: 2,
+            useGrouping: false,
+          });
+          clearInterval(stopwatchCounter);
+        }
+      }
+    }
+  }, 1000);
+}
 
 function startTime() {
   if (stopwatch.classList.contains("highlight")) {
-    startStopwatch();
+    if (start.classList.contains("start")) {
+      setPause();
+      startStopwatch();
+    } else {
+      setStart();
+      clearInterval(stopwatchCounter);
+    }
   } else {
-    startTimer();
-  }
-}
-function pauseTimer() {
-  if (stopwatch.classList.contains("highlight")) {
-    clearInterval(startT);
-    startT = null;
-  } else {
-    console.log("bye");
+    if (timer.classList.contains("highlight")) {
+      if (start.classList.contains("start")) {
+        setPause();
+        startTimer();
+      } else {
+        setStart();
+        clearInterval(stopwatchCounter);
+      }
+    }
   }
 }
 
 function resetTimer() {
+  clearInterval(stopwatchCounter);
   if (stopwatch.classList.contains("highlight")) {
-    clearInterval(startT);
-    startT = null;
+    setStart();
     secondBase = 0;
     minuteBase = 0;
     hourBase = 0;
@@ -118,9 +209,11 @@ function resetTimer() {
       useGrouping: false,
     });
   } else {
-    console.log("bye");
+    setStart();
+    closeForm();
   }
 }
+
 function setTimer() {
   document.getElementById("timer-set").style.display = "block";
 }
@@ -128,38 +221,42 @@ function setTimer() {
 function closeForm() {
   document.getElementById("timer-set").style.display = "none";
   let timerInputs = document.querySelectorAll('input[type="number"]');
-  console.log(timerInputs[2].value);
   for (i = 0; i < timerInputs.length; i++) {
-    console.log(timerInputs[i].value);
-    if (timerInputs[i].value === null) {
+    if (timerInputs[i].value == "") {
       timerInputs[i].value = 0;
     }
   }
-  let hourInput = document.getElementById("hoursTimer").value;
-  let minuteInput = document.getElementById("minutesTimer").value;
-  let secondInput = document.getElementById("secondsTimer").value;
+  let hourInput = parseInt(document.getElementById("hoursTimer").value);
+  let minuteInput = parseInt(document.getElementById("minutesTimer").value);
+  let secondInput = parseInt(document.getElementById("secondsTimer").value);
 
-  hourBase = hourInput;
-  minuteBase = minuteInput;
-  secondBase = secondInput;
+  timerHourBase = hourInput;
+  timerMinuteBase = minuteInput;
+  timerSecondBase = secondInput;
 
   hours.innerHTML = hourInput.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  minutes.innerHTML = hourInput.toLocaleString("en-US", {
+  minutes.innerHTML = minuteInput.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  seconds.innerHTML = hourInput.toLocaleString("en-US", {
+  seconds.innerHTML = secondInput.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 }
 
+let start = document.querySelector(".start");
+let reset = document.getElementById("reset");
+let setTime = document.getElementById("set-timer");
+let seconds = document.getElementById("seconds");
+let minutes = document.getElementById("minutes");
+let hours = document.getElementById("hours");
+
 start.addEventListener("click", startTime);
-pause.addEventListener("click", pauseTimer);
 reset.addEventListener("click", resetTimer);
 setTime.addEventListener("click", setTimer);

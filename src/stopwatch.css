@@ -45,7 +45,6 @@ p {
   padding: 15px 28px;
   margin: 0 2px;
   color: var(--secondary-font-color);
-  background-color: var(--secondary-color);
   border-radius: 10px;
   box-shadow: var(--primary-box-shadow);
   transition: all 300ms ease-in-out;
@@ -57,12 +56,16 @@ li:hover {
   cursor: pointer;
 }
 
-#start {
+.start {
   background-color: var(--tertiary-color);
 }
 
-#pause {
+.pause {
   background-color: rgb(197 73 76);
+}
+
+.plain {
+  background-color: var(--secondary-color);
 }
 
 #set-timer {

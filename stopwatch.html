@@ -19,7 +19,7 @@
     />
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="/src/stopwatch.css" />
-    <link rel="stylesheet" href="src/game.css" />
+    <link rel="stylesheet" href="/src/game.css" />
   </head>
   <body>
     <div class="menu">
@@ -62,16 +62,11 @@
       </div>
       <div class="time-controls">
         <ul>
-          <li class="button-stopwatch" id="start">
-            <i class="fas fa-play"></i> Start
-          </li>
-          <li class="button-stopwatch" id="pause">
-            <i class="fas fa-pause"></i> Pause
-          </li>
-          <li class="button-stopwatch" id="reset">
+          <li class="button-stopwatch start">Start</li>
+          <li class="button-stopwatch plain" id="reset">
             <i class="fas fa-undo-alt"></i> Reset
           </li>
-          <li class="button-stopwatch" id="set-timer">
+          <li class="button-stopwatch plain" id="set-timer">
             <i class="fas fa-hourglass-start"></i> Set timer
           </li>
         </ul>
@@ -117,5 +112,5 @@
     src="https://kit.fontawesome.com/6041ac5592.js"
     crossorigin="anonymous"
   ></script>
-  <script src="/src/stopwatch.js"></script>
+  <script src="src/stopwatch.js"></script>
 </html>
