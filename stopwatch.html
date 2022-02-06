@@ -77,11 +77,11 @@
       <div class="form-popup" id="timer-set">
         <p class="form-title">Set timer</p>
         <ul class="timer-presets">
-          <li class="timer-btn">5 mins</li>
-          <li class="timer-btn">10 mins</li>
-          <li class="timer-btn">20 mins</li>
-          <li class="timer-btn">30 mins</li>
-          <li class="timer-btn">60 mins</li>
+          <li class="timer-btn" id="five-min">5 mins</li>
+          <li class="timer-btn" id="ten-min">10 mins</li>
+          <li class="timer-btn" id="twenty-min">20 mins</li>
+          <li class="timer-btn" id="thirty-min">30 mins</li>
+          <li class="timer-btn" id="sixty-min">60 mins</li>
         </ul>
         <div class="custom-timer">
           <label for="hoursTimer" class="time-btn-label">Hr:</label>
@@ -118,6 +118,12 @@
         />
       </div>
     </div>
+
+    <!-- SOUNDS -->
+
+    <audio id="alarm" loop>
+      <source src="/sounds/alarm.mp3" type="audio/wav" />
+    </audio>
   </body>
   <script
     src="https://kit.fontawesome.com/6041ac5592.js"

@@ -1,3 +1,17 @@
+// SOUNDS
+let audioElement1 = document.getElementById("alarm");
+audioElement1.setAttribute("preload", "auto");
+audioElement1.autobuffer = true;
+
+function playAlarm() {
+  audioElement1.load();
+  audioElement1.play();
+}
+
+function stopAlarm() {
+  audioElement1.pause();
+}
+
 // tool selector
 
 let stopwatch = document.getElementById("stopwatch-tool");
@@ -49,6 +63,7 @@ function setStart() {
   start.classList.remove("pause");
   start.classList.add("start");
   start.innerHTML = `<i class="fas fa-play"></i> Start`;
+  stopAlarm();
 }
 
 function setPause() {
@@ -131,7 +146,7 @@ function startTimer() {
         useGrouping: false,
       });
     } else {
-      if (timerMinuteBase > 0) {
+      if (timerMinuteBase > 0 && timerMinuteBase < 59) {
         timerMinuteBase = timerMinuteBase - 1;
         minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
           minimumIntegerDigits: 2,
@@ -143,26 +158,34 @@ function startTimer() {
           useGrouping: false,
         });
       } else {
-        if (timerHourBase > 0) {
-          timerHourBase = timerHourBase - 1;
-          hours.innerHTML = timerHourBase.toLocaleString("en-US", {
-            minimumIntegerDigits: 2,
-            useGrouping: false,
-          });
-          timerMinuteBase = 59;
-          minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
-            minimumIntegerDigits: 2,
-            useGrouping: false,
-          });
-        } else {
-          timerHourBase = 0;
-          hours.innerHTML = timerHourBase.toLocaleString("en-US", {
-            minimumIntegerDigits: 2,
-            useGrouping: false,
-          });
-          clearInterval(stopwatchCounter);
-        }
+        timerSecondBase = 59;
+        seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        });
       }
+    }
+    if (timerHourBase > 0) {
+      timerHourBase = timerHourBase - 1;
+      hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+      timerMinuteBase = 59;
+      minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+    } else {
+      timerHourBase = 0;
+      hours.innerHTML = timerHourBase.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
+    }
+    if (timerSecondBase === 0 && timerMinuteBase === 0 && timerHourBase === 0) {
+      clearInterval(stopwatchCounter);
+      playAlarm();
     }
   }, 1000);
 }
@@ -211,6 +234,7 @@ function resetTimer() {
   } else {
     setStart();
     closeForm();
+    stopAlarm();
   }
 }
 
@@ -218,7 +242,9 @@ function setTimer() {
   document.getElementById("timer-set").style.display = "block";
 }
 
-function closeForm() {
+function closeForm(secondBase, minuteBase, hourBase) {
+  console.log(secondBase, hourBase, minuteBase);
+  setStart();
   document.getElementById("timer-set").style.display = "none";
   let timerInputs = document.querySelectorAll('input[type="number"]');
   for (i = 0; i < timerInputs.length; i++) {
@@ -230,21 +256,27 @@ function closeForm() {
   let minuteInput = parseInt(document.getElementById("minutesTimer").value);
   let secondInput = parseInt(document.getElementById("secondsTimer").value);
 
-  timerHourBase = hourInput;
-  timerMinuteBase = minuteInput;
-  timerSecondBase = secondInput;
+  if (secondBase !== undefined) {
+    timerHourBase = hourBase;
+    timerMinuteBase = minuteBase;
+    timerSecondBase = secondBase;
+  } else {
+    timerHourBase = hourInput;
+    timerMinuteBase = minuteInput;
+    timerSecondBase = secondInput;
+  }
 
-  hours.innerHTML = hourInput.toLocaleString("en-US", {
+  hours.innerHTML = timerHourBase.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  minutes.innerHTML = minuteInput.toLocaleString("en-US", {
+  minutes.innerHTML = timerMinuteBase.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  seconds.innerHTML = secondInput.toLocaleString("en-US", {
+  seconds.innerHTML = timerSecondBase.toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
@@ -260,3 +292,37 @@ let hours = document.getElementById("hours");
 start.addEventListener("click", startTime);
 reset.addEventListener("click", resetTimer);
 setTime.addEventListener("click", setTimer);
+
+// timer presets
+
+function setFiveMin() {
+  closeForm(0, 5, 0);
+}
+
+function setTenMin() {
+  closeForm(0, 10, 0);
+}
+
+function setTwentyMin() {
+  closeForm(0, 20, 0);
+}
+
+function setThirtyMin() {
+  closeForm(0, 30, 0);
+}
+
+function setSixtyMin() {
+  closeForm(0, 0, 1);
+}
+
+let fiveMin = document.getElementById("five-min");
+let tenMin = document.getElementById("ten-min");
+let twentyMin = document.getElementById("twenty-min");
+let thirtyMin = document.getElementById("thirty-min");
+let sixtyMin = document.getElementById("sixty-min");
+
+fiveMin.addEventListener("click", setFiveMin);
+tenMin.addEventListener("click", setTenMin);
+twentyMin.addEventListener("click", setTwentyMin);
+thirtyMin.addEventListener("click", setThirtyMin);
+sixtyMin.addEventListener("click", setSixtyMin);
