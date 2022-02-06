@@ -19,7 +19,7 @@ function stopwatchSelect() {
 function timerSelect() {
   timer.classList.add("highlight");
   stopwatch.classList.remove("highlight");
-  setTime.style.display = "inline";
+  setTime.style.display = "inline-block";
   setStart();
   clearInterval(stopwatchCounter);
   timerSecondBase = 0;
@@ -48,13 +48,13 @@ timer.addEventListener("click", timerSelect);
 function setStart() {
   start.classList.remove("pause");
   start.classList.add("start");
-  start.innerHTML = "Start";
+  start.innerHTML = `<i class="fas fa-play"></i> Start`;
 }
 
 function setPause() {
   start.classList.remove("start");
   start.classList.add("pause");
-  start.innerHTML = "Pause";
+  start.innerHTML = `<i class="fas fa-pause"></i> Pause`;
 }
 
 // Button functions

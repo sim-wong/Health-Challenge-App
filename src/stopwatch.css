@@ -74,9 +74,29 @@ li:hover {
 
 #timer-set {
   display: none;
-  width: 600px;
-  height: 220px;
-  margin: 300px auto;
+  width: 700px;
+  height: 305px;
+  margin: 200px auto;
+}
+
+.timer-presets {
+  list-style: none;
+  padding-top: 20px;
+}
+
+.custom-timer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timer-btn {
+  display: inline-block;
+  padding: 15px 28px;
+  margin: 0 2px;
+  color: var(--secondary-font-color);
+  border-radius: 10px;
+  box-shadow: var(--primary-box-shadow);
+  transition: all 300ms ease-in-out;
 }
 
 .form-title {

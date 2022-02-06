@@ -62,7 +62,9 @@
       </div>
       <div class="time-controls">
         <ul>
-          <li class="button-stopwatch start">Start</li>
+          <li class="button-stopwatch start">
+            <i class="fas fa-play"></i> Start
+          </li>
           <li class="button-stopwatch plain" id="reset">
             <i class="fas fa-undo-alt"></i> Reset
           </li>
@@ -74,30 +76,39 @@
 
       <div class="form-popup" id="timer-set">
         <p class="form-title">Set timer</p>
-        <label for="hoursTimer" class="time-btn-label">Hr:</label>
-        <input
-          class="time-input"
-          type="number"
-          id="hoursTimer"
-          name="time"
-          min="0"
-        />
-        <label for="minutesTimer" class="time-btn-label">Min:</label>
-        <input
-          class="time-input"
-          type="number"
-          id="minutesTimer"
-          name="time"
-          min="0"
-        />
-        <label for="secondsTimer" class="time-btn-label">Sec:</label>
-        <input
-          class="time-input"
-          type="number"
-          id="secondsTimer"
-          name="time"
-          min="0"
-        />
+        <ul class="timer-presets">
+          <li class="timer-btn">5 mins</li>
+          <li class="timer-btn">10 mins</li>
+          <li class="timer-btn">20 mins</li>
+          <li class="timer-btn">30 mins</li>
+          <li class="timer-btn">60 mins</li>
+        </ul>
+        <div class="custom-timer">
+          <label for="hoursTimer" class="time-btn-label">Hr:</label>
+          <input
+            class="time-input"
+            type="number"
+            id="hoursTimer"
+            name="time"
+            min="0"
+          />
+          <label for="minutesTimer" class="time-btn-label">Min:</label>
+          <input
+            class="time-input"
+            type="number"
+            id="minutesTimer"
+            name="time"
+            min="0"
+          />
+          <label for="secondsTimer" class="time-btn-label">Sec:</label>
+          <input
+            class="time-input"
+            type="number"
+            id="secondsTimer"
+            name="time"
+            min="0"
+          />
+        </div>
         <input
           class="submit-btn"
           type="submit"
