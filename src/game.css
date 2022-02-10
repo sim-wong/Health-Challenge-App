@@ -308,9 +308,12 @@ body {
   margin-top: 110px;
 }
 
-.rules-navigation {
-  padding-left: 25px;
-  padding-right: 25px;
+#rules {
+  color: black;
+}
+
+#log-workout {
+  padding-top: 100px;
 }
 
 #game-container {
@@ -411,7 +414,7 @@ h1 {
 .highlight {
   color: var(--secondary-font-color);
   background-color: var(--tertiary-color);
-  padding: 2px 10px;
+  padding: 1px 7px;
   box-shadow: rgb(50 50 93 / 10%) 0px 6px 12px -2px,
     rgb(0 0 0 / 10%) 0px 3px 7px -3px;
 }
@@ -440,16 +443,44 @@ h1 {
   margin-top: 50px;
 }
 
-.rules {
+#rules-explained {
+  position: relative;
   background-color: rgba(225 227 241);
   border-radius: 10px;
   font-size: 14px;
-  padding: 15px;
+  margin: 0px auto;
+  width: 300px;
+  padding: 15px 5px 5px 5px;
 }
 
-.rules p {
+.rules-navigation {
+  padding-right: 25px;
+  height: 20px;
+}
+
+.rules-navigation p {
   font-size: 18px;
   font-weight: bold;
+  display: inline;
+}
+
+#rules-question {
+  text-align: center;
+  display: inline;
+  color: white;
+  font-size: 16px;
+  background-color: rgb(152 177 227);
+  border-radius: 90px;
+  padding: 1px 8px;
+}
+
+.hide {
+  display: none;
+}
+
+#rules-question:hover + .hide {
+  position: relative;
+  display: block;
 }
 
 .rules ul {

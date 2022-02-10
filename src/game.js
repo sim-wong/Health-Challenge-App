@@ -211,3 +211,18 @@ function moveRight() {
     console.log(positionRight);
   }
 }
+
+// rules
+
+function openRules() {
+  if (rulesDisplay.classList.contains("hide")) {
+    rulesDisplay.classList.remove("hide");
+  } else {
+    rulesDisplay.classList.add("hide");
+  }
+}
+
+let rulesDisplay = document.getElementById("rules-explained");
+
+let rules = document.getElementById("rules-question");
+rules.addEventListener("click", openRules);
