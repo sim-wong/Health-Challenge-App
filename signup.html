@@ -46,10 +46,8 @@
                 <label for="username-input">Create a username:</label><br />
                 <input type="text" id="username-input" name="username-input" /><br />
                 <label for="password-input">Create a password:</label><br />
-                <input type="password" id="password-input" name="password-input" /><br />
-
-                <button class="submit-btn" type="submit" name="signup-submit">Create account
-                </button><br />
+                <input type="password" id="password-input" name="password-input" /><br /> <br />
+                <button onclick="signup()" class="submit-btn">Create account</button><br /> <br />
 
                 <p class="message" type="text" id="registered">Already registered? <a href="login.html">Login</a></p>
             </form>
@@ -70,31 +68,9 @@
 
 </html>
 
-<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-authjs"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"></script>
-<script>
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET
-    };
-    // Initialize Firebase
-    firebase.initializeApp(config);
-
-    // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    // update firestore settings
-    db.settings({
-        timestampsInSnapshots: true
-    });
-</script>
-<script src="src/auth.js"></script>
+<script src="src/signup.js"></script>
 <script src="src/login.js"></script>
