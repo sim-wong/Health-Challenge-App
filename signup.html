@@ -1,89 +1,100 @@
-<?php
-    include_once 'src/dbh.php';
-    require "/src/dbh.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Archon Health Challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800;900&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="src/game.css" />
     <link rel="icon" href="images/favicon.ico" />
-  </head>
-  <body>
+</head>
 
-    
+<body>
+
+
     <div class="menu">
-      <p id="menu-brand">Archon Health</p>
-      <ul>
-        <li>
-          <a href="#" id="workout-routines">Workout routines</a>
-        </li>
-        <li>
-          <a href="#" id="stopwatch">Stopwatch</a>
-        </li>
-      </ul>
-      
+        <p id="menu-brand">Archon Health</p>
+        <ul>
+            <li>
+                <a href="#" id="workout-routines">Workout routines</a>
+            </li>
+            <li>
+                <a href="#" id="stopwatch">Stopwatch</a>
+            </li>
+        </ul>
+
     </div>
 
-    
+
     <div class="page-container">
-     
+
 
         <div class="signup-intro">
             <h1>Hooray, you're up for the challenge!</h1>
-        <p>Create an account to track your progress and race to the top of the mountain.</p>
+            <p>Create an account to track your progress and race to the top of the mountain.</p>
         </div>
 
-      <?php
-        <div class="form-popup" id="signup-form">
-          <div class="form-container">
-            <form action="src/signup.php" method="post" id="signup-form">
+        <div id="form-signup" class="form-container">
+            <form id="signup-form">
                 <label for="email-input">Enter your email:</label><br />
                 <input type="email" id="email-input" name="email-input" /><br />
                 <label for="username-input">Create a username:</label><br />
                 <input type="text" id="username-input" name="username-input" /><br />
                 <label for="password-input">Create a password:</label><br />
                 <input type="password" id="password-input" name="password-input" /><br />
-          
-                <button
-                  class="submit-btn"
-                  type="submit"
-                  name="signup-submit">Create account
+
+                <button class="submit-btn" type="submit" name="signup-submit">Create account
                 </button><br />
 
                 <p class="message" type="text" id="registered">Already registered? <a href="login.html">Login</a></p>
-              </form>
-            </div>
-          </div>
-        
-      ?>  
-          <div class="signup-outro">
-            
-        <p class="quote">“Thousands of tired, nerve-shaken, over-civilized people are beginning to find out 
-            that going to the mountains is going home; that wildness is a necessity”</p>
-            <p class="author"> ― John Muir, Our National Parks</p>
+            </form>
         </div>
-
-        </div>
-        <img src="/images/goat.png" alt="goat" id="signup-image">
     </div>
-  </body>
+
+
+    <div class="signup-outro">
+
+        <p class="quote">“Thousands of tired, nerve-shaken, over-civilized people are beginning to find out that going to the mountains is going home; that wildness is a necessity”</p>
+        <p class="author"> ― John Muir, Our National Parks</p>
+    </div>
+
+    </div>
+    <img src="/images/goat.png" alt="goat" id="signup-image">
+    </div>
+</body>
+
 </html>
 
-<script src="src/login.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-authjs"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"></script>
+<script>
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET
+    };
+    // Initialize Firebase
+    firebase.initializeApp(config);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // update firestore settings
+    db.settings({
+        timestampsInSnapshots: true
+    });
+</script>
+<script src="scripts/auth.js"></script>
+<script src="scripts/login.js"></script>
